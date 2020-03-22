@@ -13,6 +13,7 @@ function getsummary(){
     document.getElementById("confirmed_cases").innerHTML = data.cases
     document.getElementById("recovered_cases").innerHTML = data.recovered
     document.getElementById("deaths").innerHTML = data.deaths
+    document.getElementById("critical").innerHTML = data.critical
     // document.getElementById("sales_amount").innerHTML = "₹ " + data.salesamount
     
  
