@@ -22,6 +22,10 @@ function getsummary(){
 }
 
 getsummary()
+ setInterval(function () {
+    // Invoke function every 10 minutes
+    getsummary();
+  }, 600000);
   
   
 // document ready  
