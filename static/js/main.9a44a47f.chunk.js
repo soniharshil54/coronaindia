@@ -340,7 +340,8 @@
                 }(), r.a.createElement(r.a.Fragment, null, r.a.createElement("h5", {
                     className: "table-fineprint fadeInUp",
                     style: {
-                        animationDelay: "1s"
+                        animationDelay: "1s",
+                        display:"none"
                     }
                 }, "Compiled from State Govt. numbers ", r.a.createElement(s.b, {
                     to: "/faq"
