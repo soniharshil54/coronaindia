@@ -146,7 +146,7 @@
                     },
                     onClick: e.total ? null : N,
                     style: {
-                        background: e.index % 2 === 0 ? "#f8f9fa" : ""
+                        background:  ""
                     }
                 }, r.a.createElement("td", {
                     style: {
@@ -1476,7 +1476,10 @@
                     }
                 }();
                 return r.a.createElement("div", {
-                    className: "Home"
+                    className: "Home",
+                      style: {
+                        backgroundColor: "black"
+                    }
                 }, r.a.createElement("div", {
                     className: "home-left"
                 }, r.a.createElement("div", {
