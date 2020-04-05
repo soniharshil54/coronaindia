@@ -1,89 +1,9 @@
-<!doctype html>
-<html lang=en>
-   <!-- Mirrored from www.covid19india.org/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 22 Mar 2020 08:22:40 GMT -->
-   <!-- Added by HTTrack -->
-   <meta http-equiv="content-type" content="text/html;charset=utf-8" />
-   <!-- /Added by HTTrack -->
-   <meta charset=utf-8>
-   <meta name=viewport content="width=device-width,initial-scale=1,minimal-ui">
-   <title>India CORONA Tracker</title>
-   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i,800&amp;display=swap" rel=stylesheet>
-   <script src=https://www.gstatic.com/charts/loader.js></script><script src=https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js></script><script src=https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js></script>
-   <!-- <script src=https://platform.twitter.com/widgets.js></script> -->
-   <link href=style.css rel=stylesheet>
-   <link rel=stylesheet href=https://unpkg.com/leaflet@1.6.0/dist/leaflet.css integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="">
-   <script src=https://unpkg.com/leaflet@1.6.0/dist/leaflet.js integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
-   <style>#map{width:100%;height:450px}.info{padding:6px 8px;font:14px/16px Arial,Helvetica,sans-serif;background:#fff;background:rgba(255,255,255,.8);box-shadow:0 0 15px rgba(0,0,0,.2);border-radius:5px}.info h4{margin:0 0 5px;color:#777}.legend{text-align:left;line-height:18px;color:#555}.legend i{width:18px;height:18px;float:left;margin-right:8px;opacity:.7}</style>
-   <link rel=icon type=image/png href=favicon.png>
-   <meta name=description content="Live updates of the Coronavirus COVID-19 outbreak in India">
-<!--    <meta name=twitter:card content=summary_large_image>
-   <meta name=twitter:url content=https://www.covid19india.org>
-   <meta name=twitter:title content="India COVID-19 Tracker">
-   <meta name=twitter:description content="Live updates of the Coronavirus COVID-19 outbreak in India"> -->
-   <meta property=og:title content="India COVID-19 Tracker">
-   <meta property=og:type content=website>
-   <meta property=og:url content=https://www.covid19india.org>
-   <meta property=og:description content="Live updates of the Coronavirus COVID-19 outbreak in India">
-   <header class=embed-hide>
-      <div class="inline header-container">
-         <h1 class=item>India CORONA Tracker</h1>
-         <div class=item>
-            <div class=tw><a href="https://twitter.com/share?ref_src=twsrc%5Etfw" id=twitter_share data-text="" data-show-count=false></a></div>
-         </div>
-      </div>
-     <!--  <em>View our <a href=https://docs.google.com/spreadsheets/d/e/2PACX-1vSc_2y5N0I67wDU38DjDh35IZSIS30rQf7_NYZhtYYGU1jJYT6_kDx4YpF-qw0LSlGsBYP8pqM_a1Pd/pubhtml target=_blank>live patient database</a></em> -->
-    <!--   <div><em>If you'd like to collaborate, join the <a href=https://t.me/covid19indiaops target=_blank>Telegram Group</a></em></div> -->
-      <div><em><span>Last Updated:</span> <strong id=last-updated></strong></em></div>
-      <section id=kpi>
-         <div id=kpi-confirmed>
-            <div class=diff id=confirmed_delta></div>
-            <div class=value id=confvalue>0</div>
-            <div class=label>Confirmed</div>
-         </div>
-         <div id=kpi-deceased>
-            <div class=diff id=deaths_delta></div>
-            <div class=value id=deathsvalue>0</div>
-            <div class=label>Deaths</div>
-         </div>
-         <div id=kpi-recovered>
-            <div class=diff id=recovered_delta></div>
-            <div class=value id=recoveredvalue>0</div>
-            <div class=label>Recovered</div>
-         </div>
-         <div id=kpi-active data-tippy-content=Tooltip>
-            <div class=diff id=states_delta></div>
-            <div class=value id=states-value>0</div>
-            <div class=label>States/UT Infected</div>
-         </div>
-       <!--   <em><a href=https://cluster.covid19india.org/ target=_blank>View our cluster mapping efforts!</a></em> -->
-      </section>
-      <section style="padding-top: 0px" class=embed-hide>
-         <h4>State-wise Data</h4>
-         <table id=prefectures-table></table>
-      </section>
-      <!-- <div style=margin-left:auto;margin-right:auto><iframe width=100% height=330px frameborder=0 scrolling=yes src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSc_2y5N0I67wDU38DjDh35IZSIS30rQf7_NYZhtYYGU1jJYT6_kDx4YpF-qw0LSlGsBYP8pqM_a1Pd/pubchart?oid=1484898533&amp;format=interactive"></iframe><iframe width=100% height=330px frameborder=0 scrolling=yes src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSc_2y5N0I67wDU38DjDh35IZSIS30rQf7_NYZhtYYGU1jJYT6_kDx4YpF-qw0LSlGsBYP8pqM_a1Pd/pubchart?oid=1586611950&amp;format=interactive"></iframe></div> -->
-      <section id=helpful-links class=embed-hide>
-         <a name=links></a>
-         <h4>Helpful Links</h4>
-         <ul>
-            <li><b>HELPLINE NUMBERS (by State)</b><br><a target=_blank href=https://www.mohfw.gov.in/coronvavirushelplinenumber.pdf>https://www.mohfw.gov.in/coronvavirushelplinenumber.pdf</a>
-         </ul>
-         <br>
-         <h4>Key Information and Resources</h4>
-         <ul>
-            <li><b>Ministry of Health and Family Welfare, Gov. of India<br></b><a target=_blank href=https://www.mohfw.gov.in/ >https://www.mohfw.gov.in/</a>
-            <li><b>WHO : COVID-19 Home Page<br></b><a target=_blank href=https://www.who.int/emergencies/diseases/novel-coronavirus-2019>https://www.who.int/emergencies/diseases/novel-coronavirus-2019</a>
-            <li><b>CDC<br></b><a target=_blank href=https://www.cdc.gov/coronavirus/2019-ncov/faq.html>https://www.cdc.gov/coronavirus/2019-ncov/faq.html</a>
-            <li><b>COVID-19 Global Tracker<br></b><a target=_blank href=https://coronavirus.thebaselab.com/ >https://coronavirus.thebaselab.com/</a>
-         </ul>
-       <!--   <i>Inspired by <a target=_blank href=http://covid19japan.com/>covid19japan.com</a></i> -->
-      </section>
-      <p style="font-size: 11px; padding: 5px;line-height: 13px;">
-      	<strong>Disclaimer:</strong>
-       This is not an official website of the Central Government or of any State Government in the Republic of India. The information displayed on this website is merely a graphical representation of the popularly available statistics on Coronavirus outbreak in India. The information displayed on this website is not a creation, discovery or innovation of us, and the same is only a display of public information collected from various sources scrutinised and verified to the best possible extent; therefore, no such display of information by us shall amount to misrepresentation, fraud, cheating, defamation, slander, besmirching or mutilating of any information, feelings, opinions, achievements or short-comings of any person, body or entity. While it is endeavoured to display correct and up-to-date information on this website, we bear no responsibility or liability and makes no representations or warranties of any kind, express or implied, towards the correctness, accuracy, completeness, reliability, suitability or availability of the same, so also of any other information, products, services, or related graphics displayed on the website for any other purpose; therefore, any reliance placed on such information by the visitor of this website shall strictly be at his/her own personal risk and consequences. The visitors of this website may be able to and may personally choose to link to other websites which are not under the control, responsibility or liability of us, and no inclusion of such links on this website shall be implied as a recommendation, endorsement or ratification of the contents of such other websites. While it is endeavoured to offer a smooth and uninterrupted usage of this website, We bears no responsibility or liability towards any interruptions in such usage including but not limited to its unavailability due to any reason whatsoever.We declare that it is and shall always remain in compliance of the policies of the Government of India, and reserves its rights to modify this website at any point of time in consonance of such compliance, as the case may be.
-      </p>
-   </header>
-   <script src=india.js></script>
-   <script src=script.js></script>
-   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-160698988-1"></script>
-   <script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-160698988-1")</script>
+<!doctype html><html lang="en">
+<!-- Mirrored from www.covid19india.org/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 05 Apr 2020 09:30:27 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head><meta charset="utf-8"/><link rel="icon" href="favicon.ico"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" content="#000000"/><link rel="apple-touch-icon" href="logo192.html"/><link rel="manifest" href="manifest.json"/><link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png"><link rel="manifest" href="site.webmanifest"><title>COVID-19 Tracker | India</title><meta name="title" content="COVID-19 Tracker | India"><meta name="description" content="Volunteer-driven crowdsourced initiative to track the spread of Coronavirus (COVID-19) in India"><meta name="keywords" content="coronavirus,corona,covid,covid19,covid-19,covidindia,india,virus"><meta property="og:type" content="website"><meta property="og:url" content="index.html"><meta property="og:title" content="COVID-19 Tracker | India"><meta property="og:description" content="Volunteer-driven crowdsourced initiative to track the spread of Coronavirus (COVID-19) in India"><meta property="og:image" content="thumbnail.html"><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="index.html"><meta property="twitter:title" content="COVID-19 Tracker | India"><meta property="twitter:description" content="Volunteer-driven crowdsourced initiative to track the spread of Coronavirus (COVID-19) in India"><meta property="twitter:image" content="thumbnail.html"><link href="static/css/main.756253c5.chunk.css" rel="stylesheet"><style type="text/css">
+.home-right{
+	display: none
+}</style></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div><script>!function(e){function r(r){for(var n,i,l=r[0],a=r[1],f=r[2],p=0,s=[];p<l.length;p++)i=l[p],Object.prototype.hasOwnProperty.call(o,i)&&o[i]&&s.push(o[i][0]),o[i]=0;for(n in a)Object.prototype.hasOwnProperty.call(a,n)&&(e[n]=a[n]);for(c&&c(r);s.length;)s.shift()();return u.push.apply(u,f||[]),t()}function t(){for(var e,r=0;r<u.length;r++){for(var t=u[r],n=!0,l=1;l<t.length;l++){var a=t[l];0!==o[a]&&(n=!1)}n&&(u.splice(r--,1),e=i(i.s=t[0]))}return e}var n={},o={1:0},u=[];function i(r){if(n[r])return n[r].exports;var t=n[r]={i:r,l:!1,exports:{}};return e[r].call(t.exports,t,t.exports,i),t.l=!0,t.exports}i.m=e,i.c=n,i.d=function(e,r,t){i.o(e,r)||Object.defineProperty(e,r,{enumerable:!0,get:t})},i.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},i.t=function(e,r){if(1&r&&(e=i(e)),8&r)return e;if(4&r&&"object"==typeof e&&e&&e.__esModule)return e;var t=Object.create(null);if(i.r(t),Object.defineProperty(t,"default",{enumerable:!0,value:e}),2&r&&"string"!=typeof e)for(var n in e)i.d(t,n,function(r){return e[r]}.bind(null,n));return t},i.n=function(e){var r=e&&e.__esModule?function(){return e.default}:function(){return e};return i.d(r,"a",r),r},i.o=function(e,r){return Object.prototype.hasOwnProperty.call(e,r)},i.p="index.html";var l=this.webpackJsonpcovid19india=this.webpackJsonpcovid19india||[],a=l.push.bind(l);l.push=r,l=l.slice();for(var f=0;f<l.length;f++)r(l[f]);var c=a;t()}([])</script><script src="static/js/2.c3f3bb9f.chunk.js"></script><script src="static/js/main.9a44a47f.chunk.js"></script></body><script async src="https://www.googletagmanager.com/gtag/js?id=UA-160698988-1"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-160698988-1")</script>
+<!-- Mirrored from www.covid19india.org/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 05 Apr 2020 09:30:37 GMT -->
+</html>
