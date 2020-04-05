@@ -236,7 +236,7 @@
                         className: "district",
                         style: {
                             display: e.reveal && !e.total ? "" : "none",
-                            background: a % 2 === 0 ? "#f8f9fa" : ""
+                            background: ""
                         },
                         onMouseEnter: function() {
                             var a;
@@ -352,6 +352,9 @@
                     }
                 }, r.a.createElement("thead", null, r.a.createElement("tr", null, r.a.createElement("th", {
                     className: "sticky state-heading",
+                     style: {
+                        background: "rgba(108, 117, 125, .0627451)"
+                    },
                     onClick: function(e) {
                         return C(e)
                     }
@@ -369,6 +372,9 @@
                     className: "arrow-down"
                 })))), r.a.createElement("th", {
                     className: "sticky",
+                      style: {
+                        background: "rgba(108, 117, 125, .0627451)"
+                    },
                     onClick: function(e) {
                         return C(e)
                     }
@@ -387,6 +393,9 @@
                     className: "arrow-down"
                 })))), r.a.createElement("th", {
                     className: "sticky",
+                      style: {
+                        background: "rgba(108, 117, 125, .0627451)"
+                    },
                     onClick: function(e) {
                         return C(e)
                     }
@@ -405,6 +414,9 @@
                     className: "arrow-down"
                 })))), r.a.createElement("th", {
                     className: "sticky",
+                      style: {
+                        background: "rgba(108, 117, 125, .0627451)"
+                    },
                     onClick: function(e) {
                         return C(e)
                     }
@@ -425,6 +437,9 @@
                     className: "arrow-down"
                 })))), r.a.createElement("th", {
                     className: "sticky",
+                      style: {
+                        background: "rgba(108, 117, 125, .0627451)"
+                    },
                     onClick: function(e) {
                         return C(e)
                     }
