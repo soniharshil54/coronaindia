@@ -151,27 +151,29 @@
                 }, r.a.createElement("td", {
                     style: {
                         fontWeight: 600,
-                        fontSize: "0.5rem"
+                        fontSize: "0.6rem"
                     }
                 }, c.state), r.a.createElement("td", null, r.a.createElement("span", {
                     className: "deltas",
                     style: {
                         color: "#ff073a",
-                        fontSize: "0.5rem"
+                        fontSize: "0.6rem"
                     }
                 }, c.deltaconfirmed > 0 && r.a.createElement(C.a, null), c.deltaconfirmed > 0 ? "".concat(c.deltaconfirmed) : ""), 0 === parseInt(c.confirmed) ? "-" : c.confirmed), r.a.createElement("td", {
                     style: {
-                        color: 0 === parseInt(c.active) ? "#B5B5B5" : "inherit"
+                        color: 0 === parseInt(c.active) ? "#B5B5B5" : "inherit",
+                        fontSize: "0.6rem"
                     }
                 }, 0 === parseInt(c.active) ? "-" : c.active), r.a.createElement("td", {
                     style: {
                         color: 0 === parseInt(c.recovered) ? "#B5B5B5" : "inherit",
-                        fontSize: "0.5rem"
+                        fontSize: "0.6rem"
                     }
                 }, r.a.createElement("span", {
                     className: "deltas",
                     style: {
-                        color: "#28a745"
+                        color: "#28a745",
+                        fontSize: "0.6rem"
                     }
                 }, c.deltarecovered > 0 && r.a.createElement(C.a, null), c.deltarecovered > 0 ? "".concat(c.deltarecovered) : ""), 0 === parseInt(c.recovered) ? "-" : c.recovered), r.a.createElement("td", {
                     style: {
@@ -181,7 +183,7 @@
                     className: "deltas",
                     style: {
                         color: "#6c757d",
-                        fontSize: "0.5rem"
+                        fontSize: "0.6rem"
                     }
                 }, c.deltadeaths > 0 && r.a.createElement(C.a, null), c.deltadeaths > 0 ? "".concat(c.deltadeaths) : ""), 0 === parseInt(c.deaths) ? "-" : c.deaths)), r.a.createElement("tr", {
                     className: "state-last-update",
