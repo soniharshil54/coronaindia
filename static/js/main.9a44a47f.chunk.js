@@ -191,7 +191,10 @@
                         display: e.reveal && !e.total ? "" : "none"
                     }
                 }, r.a.createElement("td", {
-                    colSpan: 2
+                    colSpan: 2,
+                    style: {
+                        fontSize: "0.6rem"
+                    }
                 }, r.a.createElement("div", {
                     className: "last-update"
                 }, r.a.createElement("h6", null, "Last Updated\xa0"), r.a.createElement("h6", {
