@@ -278,7 +278,8 @@
                 }, "Unknown"), r.a.createElement("td", null, r.a.createElement("span", {
                     className: "deltas",
                     style: {
-                        color: "#ff073a"
+                        color: "#ff073a",
+                        fontSize: "0.6rem"
                     }
                 }, h.Unknown.delta.confirmed > 0 && r.a.createElement(C.a, null), h.Unknown.delta.confirmed > 0 ? "".concat(h.Unknown.delta.confirmed) : ""), h.Unknown.confirmed)), r.a.createElement("tr", {
                     className: "spacer",
